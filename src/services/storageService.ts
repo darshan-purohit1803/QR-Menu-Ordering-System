@@ -1,72 +1,71 @@
 import type { Order, OrderStatus, SeatingGroup } from '../types'
 
-const STORAGE_KEY_ORDERS = 'shree_orders_v1'
-const STORAGE_KEY_SEATING = 'shree_seating_groups_v1'
-export const STORAGE_CHANGE_EVENT = 'shree_storage_changed'
+const STORAGE_KEY_ORDERS = 'neapolitan_pureveg_orders_v3'
+const STORAGE_KEY_SEATING = 'neapolitan_seating_groups_v3'
+export const STORAGE_CHANGE_EVENT = 'neapolitan_storage_changed'
 
 export const INITIAL_SEATING_GROUPS: SeatingGroup[] = [
   {
     id: 'G12',
     name: 'Tables 07 + 08',
     tables: ['07', '08'],
-    active: false, // Can be toggled by staff during the demo
+    active: false,
   },
 ]
 
 export const INITIAL_ORDERS: Order[] = [
   {
-    id: 'SR-1041',
-    orderNumber: '#SR-1041',
+    id: 'NP-1041',
+    orderNumber: '#NP-1041',
     tableNumber: '02',
     seatingGroup: null,
     items: [
-      { id: 'guj-1', name: 'Gujarati Thali', price: 280, quantity: 2, category: 'Gujarati Food' },
-      { id: 'bev-1', name: 'Masala Chaas', price: 40, quantity: 2, category: 'Beverages & Cold Drinks' },
-      { id: 'des-1', name: 'Gulab Jamun (2 Pcs)', price: 80, quantity: 1, category: 'Desserts' },
+      { id: 'piz-1', name: 'Margherita D.O.P.', price: 490, quantity: 2, category: 'Classic Neapolitan', crustInfo: '11" Woodfired 48h Dough' },
+      { id: 'side-1', name: 'Truffle Garlic Dough Knots', price: 290, quantity: 1, category: 'Artisan Crust Bites & Starters' },
+      { id: 'bev-1', name: 'San Pellegrino Blood Orange', price: 220, quantity: 2, category: 'Italian Beverages & Craft Soda' },
     ],
-    subtotal: 720,
-    tax: 36, // 5% GST
-    total: 756,
+    subtotal: 1710,
+    tax: 85.50, // 5% GST
+    total: 1795.50,
     status: 'ready',
-    customerNotes: 'Please serve Chaas chilled before the thali.',
-    createdAt: new Date(Date.now() - 22 * 60 * 1000).toISOString(),
-    updatedAt: new Date(Date.now() - 5 * 60 * 1000).toISOString(),
+    customerNotes: 'Please slice the pizzas into 6 slices and serve hot chili oil on the side.',
+    createdAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
+    updatedAt: new Date(Date.now() - 4 * 60 * 1000).toISOString(),
   },
   {
-    id: 'SR-1042',
-    orderNumber: '#SR-1042',
+    id: 'NP-1042',
+    orderNumber: '#NP-1042',
     tableNumber: '05',
     seatingGroup: null,
     items: [
-      { id: 'starter-1', name: 'Paneer Tikka', price: 240, quantity: 1, category: 'Starters / Appetizers' },
-      { id: 'pun-1', name: 'Paneer Butter Masala', price: 260, quantity: 1, category: 'Punjabi Food' },
-      { id: 'roti-4', name: 'Butter Naan', price: 55, quantity: 3, category: 'Roti & Naan' },
-      { id: 'rice-2', name: 'Jeera Rice', price: 150, quantity: 1, category: 'Rice' },
+      { id: 'truf-1', name: 'Tartufo Nero & Wild Funghi', price: 740, quantity: 1, category: 'Signature & Truffle', crustInfo: '11" Woodfired 48h Dough' },
+      { id: 'diav-1', name: 'Diavola di Burrata & Chili Crisp', price: 640, quantity: 1, category: 'Spicy & Diavola', crustInfo: '11" Woodfired 48h Dough' },
+      { id: 'bev-2', name: 'Iced Espresso Tonic al Limone', price: 190, quantity: 2, category: 'Italian Beverages & Craft Soda' },
     ],
-    subtotal: 815,
-    tax: 40.75,
-    total: 855.75,
+    subtotal: 1760,
+    tax: 88,
+    total: 1848,
     status: 'preparing',
-    customerNotes: 'Medium spicy paneer butter masala please.',
-    createdAt: new Date(Date.now() - 14 * 60 * 1000).toISOString(),
-    updatedAt: new Date(Date.now() - 10 * 60 * 1000).toISOString(),
+    customerNotes: 'Extra hot wildflower honey drizzle on the Diavola pizza please!',
+    createdAt: new Date(Date.now() - 11 * 60 * 1000).toISOString(),
+    updatedAt: new Date(Date.now() - 6 * 60 * 1000).toISOString(),
   },
   {
-    id: 'SR-1043',
-    orderNumber: '#SR-1043',
+    id: 'NP-1043',
+    orderNumber: '#NP-1043',
     tableNumber: '01',
     seatingGroup: null,
     items: [
-      { id: 'jain-5', name: 'Jain Special Thali', price: 290, quantity: 2, category: 'Jain Food' },
-      { id: 'bev-2', name: 'Sweet Punjabi Lassi', price: 70, quantity: 2, category: 'Beverages & Cold Drinks' },
+      { id: 'piz-3', name: 'Burrata & Pomodorini', price: 680, quantity: 1, category: 'Classic Neapolitan', crustInfo: '11" Woodfired 48h Dough' },
+      { id: 'des-1', name: 'Classic Tiramisù al Mascarpone', price: 320, quantity: 2, category: 'Dolci & Artisan Gelato' },
     ],
-    subtotal: 720,
-    tax: 36,
-    total: 756,
+    subtotal: 1320,
+    tax: 66,
+    total: 1386,
     status: 'served',
-    customerNotes: 'Strict Jain preparation.',
-    createdAt: new Date(Date.now() - 45 * 60 * 1000).toISOString(),
-    updatedAt: new Date(Date.now() - 25 * 60 * 1000).toISOString(),
+    customerNotes: 'Serve dessert after pizza.',
+    createdAt: new Date(Date.now() - 35 * 60 * 1000).toISOString(),
+    updatedAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
   },
 ]
 
@@ -103,12 +102,12 @@ export function saveOrders(orders: Order[]): void {
 
 export function createDemoOrder(
   tableNumber: string,
-  items: { id: string; name: string; price: number; quantity: number; category: any }[],
+  items: { id: string; name: string; price: number; quantity: number; category: any; crustInfo?: string }[],
   customerNotes?: string
 ): Order {
   const orders = getOrders()
   const randomSuffix = Math.floor(1000 + Math.random() * 9000)
-  const orderId = `SR-${randomSuffix}`
+  const orderId = `NP-${randomSuffix}`
   
   // Calculate subtotal
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0)

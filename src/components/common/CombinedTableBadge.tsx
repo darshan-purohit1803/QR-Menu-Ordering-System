@@ -14,7 +14,7 @@ export const CombinedTableBadge: React.FC<CombinedTableBadgeProps> = ({
 }) => {
   return (
     <div
-      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#A3432B]/10 text-[#A3432B] border border-[#A3432B]/20 text-xs font-medium ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#C0392B]/10 text-[#C0392B] border border-[#C0392B]/20 text-xs font-medium ${className}`}
       title={`Combined Seating Group G12 (${groupName})`}
     >
       <Users2 className="w-3.5 h-3.5" />

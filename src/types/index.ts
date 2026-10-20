@@ -1,26 +1,27 @@
 export type MenuCategory =
-  | 'Starters / Appetizers'
-  | 'Gujarati Food'
-  | 'Jain Food'
-  | 'Punjabi Food'
-  | 'Veg Subji'
-  | 'Chinese'
-  | 'Rice'
-  | 'Roti & Naan'
-  | 'Beverages & Cold Drinks'
-  | 'Desserts'
+  | 'Classic Neapolitan'
+  | 'Signature & Truffle'
+  | 'Spicy & Diavola'
+  | 'White Pizzas (Pizza Bianca)'
+  | 'Veggie Garden & Pesto'
+  | 'Gourmet Artisan Specials'
+  | 'Calzones & Stuffed Crust'
+  | 'Artisan Crust Bites & Starters'
+  | 'Italian Beverages & Craft Soda'
+  | 'Dolci & Artisan Gelato'
 
 export interface MenuItem {
   id: string
   name: string
+  italianSubtitle?: string
   category: MenuCategory
   description: string
   price: number
   isVeg: boolean
-  isJainAvailable?: boolean
+  isSpicy?: boolean
   isAvailable: boolean
   prepTimeMinutes?: number
-  spicyLevel?: 0 | 1 | 2 | 3
+  crustInfo?: string
   imageUrl: string
   badge?: string
 }
@@ -39,6 +40,7 @@ export interface OrderLineItem {
   price: number
   quantity: number
   category: MenuCategory
+  crustInfo?: string
 }
 
 export interface Order {

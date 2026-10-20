@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Utensils } from 'lucide-react'
+import { Pizza } from 'lucide-react'
 
 interface FoodImageProps {
   src: string
@@ -13,20 +13,20 @@ export const FoodImageWithFallback: React.FC<FoodImageProps> = ({ src, alt, clas
 
   if (hasError) {
     return (
-      <div className={`bg-[#EFE9DF] flex flex-col items-center justify-center text-[#8C7E72] p-4 ${className}`}>
-        <Utensils className="w-8 h-8 opacity-40 mb-1" />
-        <span className="text-[10px] uppercase tracking-wider font-medium opacity-70 text-center">
-          Shree Pure Veg
+      <div className={`bg-[#F4EFE6] flex flex-col items-center justify-center text-[#8C7662] p-4 ${className}`}>
+        <Pizza className="w-8 h-8 opacity-50 mb-1 text-[#C0392B]" />
+        <span className="text-[10px] uppercase tracking-wider font-semibold opacity-80 text-center font-serif text-[#4A3B32]">
+          Neapolitan Woodfired
         </span>
       </div>
     )
   }
 
   return (
-    <div className={`relative overflow-hidden bg-[#EFE9DF] ${className}`}>
+    <div className={`relative overflow-hidden bg-[#F4EFE6] ${className}`}>
       {isLoading && (
-        <div className="absolute inset-0 bg-[#EFE9DF] animate-pulse flex items-center justify-center">
-          <Utensils className="w-6 h-6 text-[#A39688]/30" />
+        <div className="absolute inset-0 bg-[#F4EFE6] animate-pulse flex items-center justify-center">
+          <Pizza className="w-6 h-6 text-[#A39688]/40" />
         </div>
       )}
       <img
